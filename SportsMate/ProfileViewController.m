@@ -12,7 +12,8 @@
 
     @property AppDelegate *appdelegate;
     @property NSManagedObjectContext *context;
-
+@property UINavigationController *navi;
+@property UINavigationController *navi2;
 
 @end
 
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ self.navi = (UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:2];
+     self.navi2 = (UINavigationController *)[self.tabBarController.viewControllers objectAtIndex:1];
     NSString *name;
     NSString *phone;
     NSString *city;
@@ -37,7 +40,7 @@
             birth= [self.currentUser valueForKey:@"birth"];
     path = [self.currentUser valueForKey:@"imagePath"];
     NSLog(@"%@", [NSString stringWithFormat:@"%@",path]);
-   
+    self.additionalInfo.text = [self.currentUser valueForKey:@"additional"];
     self.profileImage.image = [UIImage imageWithContentsOfFile:path];
     self.nameField.text = name;
     self.phoneField.text = phone;
@@ -138,6 +141,7 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     //путь к файлу в каталоге
+    // NSDocument dirctory  погуглить и может быть заменить на другое
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
     NSString *uniqueFilename = [[NSUUID UUID]UUIDString];
     NSString *imagePath = [documentsDirectory stringByAppendingPathComponent:uniqueFilename];
@@ -146,7 +150,7 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
     [self.currentUser setValue:imagePath forKey:@"imagePath"];
-     NSLog(@"hui%@", [NSString stringWithFormat:@"%@",imagePath]);
+     NSLog(@"%@", [NSString stringWithFormat:@"%@",imagePath]);
     [_appdelegate saveContext];
     self.profileImage.image = image;
     
@@ -208,13 +212,17 @@
     [self.pickerViewContainer setHidden: NO];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
-    self.pickerViewContainer.frame = CGRectMake(0,390, 375, 290);
+    self.pickerViewContainer.frame = CGRectMake(0,362, 375, 290);
     [UIView commitAnimations];
 }
 
--(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    self.places = (PlacesTableViewController *)viewController;
+
+-(void)viewWillDisappear:(BOOL)animated{
+    self.users = _navi.topViewController;
+    self.users.currentUser = self.currentUser;
+    self.places = _navi2.topViewController;
     self.places.currentUser = self.currentUser;
+
 }
 
 - (IBAction)exitBtnPressed:(id)sender {

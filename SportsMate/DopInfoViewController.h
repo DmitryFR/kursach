@@ -33,6 +33,7 @@
 
 @property (retain,nonatomic)NSManagedObject *creatingUser;
 
+@property (weak, nonatomic) IBOutlet UITextView *additionalInfo;
 
 
 @property (strong, nonatomic) IBOutlet UIView *pickerViewContainer;

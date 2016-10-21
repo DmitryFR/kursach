@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
+#import <MapKit/MapKit.h>
+
 @interface ExistingPlaceViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *cityField;
 @property (weak, nonatomic) IBOutlet UILabel *subwayField;
@@ -17,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (retain, nonatomic)NSManagedObject *chooseEvent;
+@property (weak, nonatomic) IBOutlet UITextView *additionalInfo;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

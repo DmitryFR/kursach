@@ -137,6 +137,7 @@
         [self.creatingUser setValue:self.birthDate.text forKey:@"birth"];
         [self.creatingUser setValue:self.genderField.text forKey:@"gender"];
         [self.creatingUser setValue:0 forKey:@"winrate"];
+        [self.creatingUser setValue:self.additionalInfo.text forKey:@"additional"];
         [appdelegate saveContext];
         SportViewController *sc = (SportViewController *)segue.destinationViewController;
         sc.userInf = self.creatingUser;

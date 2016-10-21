@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *sportField;
 @property (retain, nonatomic)NSManagedObject *event;
 @property (strong,nonatomic)NSMutableArray *sportArr;
+@property (weak, nonatomic) IBOutlet UITextView *additionalInfo;
+
 - (IBAction)selectSportBtnPressed:(id)sender;
 - (IBAction)kkBtnPressed:(id)sender;
 - (IBAction)addPhotoBtnPressed:(id)sender;

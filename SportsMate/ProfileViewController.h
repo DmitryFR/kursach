@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "PlacesTableViewController.h"
+#import "UsersTableViewController.h"
 
 
 @interface ProfileViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UIActionSheetDelegate,UITabBarControllerDelegate>{
@@ -28,11 +29,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *takePictureBtn;
 @property (strong, nonatomic)NSMutableArray *sportArr;
 
+@property (weak, nonatomic) IBOutlet UITextView *additionalInfo;
 @property(weak, nonatomic)NSArray *arr;
 - (IBAction)sportHasChanged:(id)sender;
 
 
 @property(strong, nonatomic)PlacesTableViewController *places;
+@property (strong, nonatomic)UsersTableViewController *users;
 
 - (IBAction)kkBtn:(id)sender;
 - (IBAction)changeBtn:(id)sender;

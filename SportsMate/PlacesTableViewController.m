@@ -29,9 +29,13 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    NSString *sport = [self.currentUser valueForKey:@"sport"];
+    NSString *city = [self.currentUser valueForKey:@"city"];
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:_context];
     [request setEntity:entityDesc];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sport like %@ and city like %@", sport,city];
+[request setPredicate:predicate];
     self.eventArr = [_context executeFetchRequest:request error:nil];
     [self.tableView reloadData];
 }
@@ -77,9 +81,13 @@
     if (editingStyle == UITableViewCellEditingStyleDelete){
         [_context deleteObject:[self.eventArr objectAtIndex:indexPath.row]];
         [_appdelegate saveContext];
+        NSString *sport = [self.currentUser valueForKey:@"sport"];
+        NSString *city = [self.currentUser valueForKey:@"city"];
         NSFetchRequest *request = [[NSFetchRequest alloc]init];
         NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:_context];
         [request setEntity:entityDesc];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sport like %@ and city like %@", sport,city];
+        [request setPredicate:predicate];
         self.eventArr = [_context executeFetchRequest:request error:nil];
         [self.tableView reloadData];
         

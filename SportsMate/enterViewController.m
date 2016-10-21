@@ -13,6 +13,7 @@
 @interface enterViewController (){
 NSManagedObjectContext *context;
     AppDelegate *appdelegate;}
+
 @end
 
 @implementation enterViewController
@@ -103,6 +104,7 @@ NSManagedObjectContext *context;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     self.tbController = (UITabBarController *)[segue destinationViewController];
     self.profile = [self.tbController.viewControllers objectAtIndex:0];
+    
     self.profile.currentUser = self.currentUser;
 }
 

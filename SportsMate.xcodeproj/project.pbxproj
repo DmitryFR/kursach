@@ -10,10 +10,15 @@
 		AA1BB1451DB28843008E1DDA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB1441DB28843008E1DDA /* ProfileViewController.m */; };
 		AA1BB14B1DB29E6E008E1DDA /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB14A1DB29E6E008E1DDA /* PopoverViewController.m */; };
 		AA1BB14E1DB2AC1D008E1DDA /* enterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB14D1DB2AC1D008E1DDA /* enterViewController.m */; };
-		AA1BB1571DB2BC95008E1DDA /* SportsMate1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB1551DB2BC95008E1DDA /* SportsMate1.xcdatamodeld */; };
 		AA1BB15A1DB3B116008E1DDA /* PlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB1591DB3B116008E1DDA /* PlacesTableViewController.m */; };
 		AA1BB15D1DB3B13C008E1DDA /* NewPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB15C1DB3B13C008E1DDA /* NewPlaceViewController.m */; };
 		AA1BB1601DB3B14A008E1DDA /* ExistingPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB15F1DB3B14A008E1DDA /* ExistingPlaceViewController.m */; };
+		AA1BB16C1DB4B2E8008E1DDA /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB16B1DB4B2E8008E1DDA /* UsersTableViewController.m */; };
+		AA1BB16F1DB4B300008E1DDA /* ExistingUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB16E1DB4B300008E1DDA /* ExistingUserViewController.m */; };
+		AA1BB1721DB4B5D8008E1DDA /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB1711DB4B5D8008E1DDA /* UserTableViewCell.m */; };
+		AA1BB1751DB4D077008E1DDA /* SportsMate1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB1731DB4D077008E1DDA /* SportsMate1.xcdatamodeld */; };
+		AA1BB1771DB52644008E1DDA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1BB1761DB52644008E1DDA /* MapKit.framework */; };
+		AA7D345F1DB8EC5B00D7E1D5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7D345E1DB8EC5B00D7E1D5 /* Launch Screen.storyboard */; };
 		AA9FE6761DB2267800CEE1CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9FE6751DB2267800CEE1CC /* CoreData.framework */; };
 		AAA33D411DAAB45400A9D27E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA33D401DAAB45400A9D27E /* main.m */; };
 		AAA33D441DAAB45400A9D27E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA33D431DAAB45400A9D27E /* AppDelegate.m */; };
@@ -55,13 +60,21 @@
 		AA1BB14A1DB29E6E008E1DDA /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverViewController.m; path = ../PopoverViewController.m; sourceTree = "<group>"; };
 		AA1BB14C1DB2AC1D008E1DDA /* enterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enterViewController.h; sourceTree = "<group>"; };
 		AA1BB14D1DB2AC1D008E1DDA /* enterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enterViewController.m; sourceTree = "<group>"; };
-		AA1BB1561DB2BC95008E1DDA /* SportsMate1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsMate1.xcdatamodel; sourceTree = "<group>"; };
 		AA1BB1581DB3B116008E1DDA /* PlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesTableViewController.h; sourceTree = "<group>"; };
 		AA1BB1591DB3B116008E1DDA /* PlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesTableViewController.m; sourceTree = "<group>"; };
 		AA1BB15B1DB3B13C008E1DDA /* NewPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPlaceViewController.h; sourceTree = "<group>"; };
 		AA1BB15C1DB3B13C008E1DDA /* NewPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPlaceViewController.m; sourceTree = "<group>"; };
 		AA1BB15E1DB3B14A008E1DDA /* ExistingPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingPlaceViewController.h; sourceTree = "<group>"; };
 		AA1BB15F1DB3B14A008E1DDA /* ExistingPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingPlaceViewController.m; sourceTree = "<group>"; };
+		AA1BB16A1DB4B2E8008E1DDA /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
+		AA1BB16B1DB4B2E8008E1DDA /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
+		AA1BB16D1DB4B300008E1DDA /* ExistingUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingUserViewController.h; sourceTree = "<group>"; };
+		AA1BB16E1DB4B300008E1DDA /* ExistingUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingUserViewController.m; sourceTree = "<group>"; };
+		AA1BB1701DB4B5D8008E1DDA /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		AA1BB1711DB4B5D8008E1DDA /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		AA1BB1741DB4D077008E1DDA /* SportsMate1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsMate1.xcdatamodel; sourceTree = "<group>"; };
+		AA1BB1761DB52644008E1DDA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AA7D345E1DB8EC5B00D7E1D5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AA9FE6751DB2267800CEE1CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AAA33D3C1DAAB45400A9D27E /* SportsMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA33D401DAAB45400A9D27E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1BB1771DB52644008E1DDA /* MapKit.framework in Frameworks */,
 				AA9FE6761DB2267800CEE1CC /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +133,7 @@
 		AA9FE6741DB2267800CEE1CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA1BB1761DB52644008E1DDA /* MapKit.framework */,
 				AA9FE6751DB2267800CEE1CC /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -152,6 +167,11 @@
 				AAA33D7B1DABFCF200A9D27E /* DopInfoViewController.h */,
 				AAA33D7C1DABFCF200A9D27E /* DopInfoViewController.m */,
 				AAA33D481DAAB45400A9D27E /* Main.storyboard */,
+				AA7D345E1DB8EC5B00D7E1D5 /* Launch Screen.storyboard */,
+				AA1BB16A1DB4B2E8008E1DDA /* UsersTableViewController.h */,
+				AA1BB16B1DB4B2E8008E1DDA /* UsersTableViewController.m */,
+				AA1BB16D1DB4B300008E1DDA /* ExistingUserViewController.h */,
+				AA1BB16E1DB4B300008E1DDA /* ExistingUserViewController.m */,
 				AA1BB15B1DB3B13C008E1DDA /* NewPlaceViewController.h */,
 				AA1BB15C1DB3B13C008E1DDA /* NewPlaceViewController.m */,
 				AA1BB15E1DB3B14A008E1DDA /* ExistingPlaceViewController.h */,
@@ -160,9 +180,11 @@
 				AA1BB1591DB3B116008E1DDA /* PlacesTableViewController.m */,
 				AA1BB1431DB28843008E1DDA /* ProfileViewController.h */,
 				AA1BB1441DB28843008E1DDA /* ProfileViewController.m */,
+				AA1BB1731DB4D077008E1DDA /* SportsMate1.xcdatamodeld */,
+				AA1BB1701DB4B5D8008E1DDA /* UserTableViewCell.h */,
+				AA1BB1711DB4B5D8008E1DDA /* UserTableViewCell.m */,
 				AA1BB14C1DB2AC1D008E1DDA /* enterViewController.h */,
 				AA1BB14D1DB2AC1D008E1DDA /* enterViewController.m */,
-				AA1BB1551DB2BC95008E1DDA /* SportsMate1.xcdatamodeld */,
 				AAA33D781DABFCD100A9D27E /* RegViewController.h */,
 				AAA33D791DABFCD100A9D27E /* RegViewController.m */,
 				AAA33D751DABFCAD00A9D27E /* MainViewController.h */,
@@ -330,6 +352,7 @@
 				AAA33D931DB15BB400A9D27E /* Копия sport3.png in Resources */,
 				AAA33D4F1DAAB45400A9D27E /* Assets.xcassets in Resources */,
 				AAA33D4A1DAAB45400A9D27E /* Main.storyboard in Resources */,
+				AA7D345F1DB8EC5B00D7E1D5 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +377,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1BB16F1DB4B300008E1DDA /* ExistingUserViewController.m in Sources */,
 				AAA33D441DAAB45400A9D27E /* AppDelegate.m in Sources */,
+				AA1BB16C1DB4B2E8008E1DDA /* UsersTableViewController.m in Sources */,
+				AA1BB1751DB4D077008E1DDA /* SportsMate1.xcdatamodeld in Sources */,
 				AA1BB14E1DB2AC1D008E1DDA /* enterViewController.m in Sources */,
 				AAA33D7D1DABFCF200A9D27E /* DopInfoViewController.m in Sources */,
 				AA1BB1601DB3B14A008E1DDA /* ExistingPlaceViewController.m in Sources */,
@@ -365,8 +391,8 @@
 				AAA33D7A1DABFCD100A9D27E /* RegViewController.m in Sources */,
 				AA1BB15A1DB3B116008E1DDA /* PlacesTableViewController.m in Sources */,
 				AA1BB15D1DB3B13C008E1DDA /* NewPlaceViewController.m in Sources */,
-				AA1BB1571DB2BC95008E1DDA /* SportsMate1.xcdatamodeld in Sources */,
 				AAA33D771DABFCAD00A9D27E /* MainViewController.m in Sources */,
+				AA1BB1721DB4B5D8008E1DDA /* UserTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,12 +639,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AA1BB1551DB2BC95008E1DDA /* SportsMate1.xcdatamodeld */ = {
+		AA1BB1731DB4D077008E1DDA /* SportsMate1.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AA1BB1561DB2BC95008E1DDA /* SportsMate1.xcdatamodel */,
+				AA1BB1741DB4D077008E1DDA /* SportsMate1.xcdatamodel */,
 			);
-			currentVersion = AA1BB1561DB2BC95008E1DDA /* SportsMate1.xcdatamodel */;
+			currentVersion = AA1BB1741DB4D077008E1DDA /* SportsMate1.xcdatamodel */;
 			path = SportsMate1.xcdatamodeld;
 			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;

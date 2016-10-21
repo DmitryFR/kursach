@@ -128,7 +128,7 @@
     [self.pickerViewContainer setHidden: NO];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
-    self.pickerViewContainer.frame = CGRectMake(0,390, 375, 290);
+    self.pickerViewContainer.frame = CGRectMake(0,357, 375, 290);
     [UIView commitAnimations];
 }
 
@@ -205,6 +205,7 @@
     [self.event setValue:self.subwayField.text forKey:@"subway"];
     [self.event setValue:self.adressField.text forKey:@"adress"];
     [self.event setValue:self.sportField.text forKey:@"sport"];
+    [self.event setValue:self.additionalInfo.text forKey:@"additional"];
     [appdelegate saveContext];
 //    UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:nil message:@"Событие успешно добалено!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [self hideKeyboard];
