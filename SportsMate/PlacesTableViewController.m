@@ -41,6 +41,8 @@
 }
 #pragma mark - Table view data source
 
+// настройка секции и строк таблицы
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
@@ -63,7 +65,7 @@
 }
 
 
-
+// передача данных на следующую форму
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"MoreInf"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

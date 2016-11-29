@@ -20,47 +20,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // назначения делегатов полей ввода
     [[self nameField]setDelegate:self ];
     [[self phoneField]setDelegate:self];
     [[self cityField]setDelegate:self];
+    // вызов метода скрывание клавиатуры по нажатию на любую область вне клавиатуры
     [self hideKeyboardWhenBackgroungIsTapped];
     
+    //инициализация массива пола
     genderArr = [[NSMutableArray alloc] init];
     [genderArr addObject:@"Мужской"];
     [genderArr addObject:@"Женский"];
     
+    //создания помощника сохранения в базу данных
     appdelegate = [[UIApplication sharedApplication]delegate];
     context = appdelegate.persistentContainer.viewContext;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    //отрисовка контейнеров для выплывающих списков
     self.dateViewContainer.frame = CGRectMake(0,700,375,290);
     self.pickerViewContainer.frame = CGRectMake(0, 700, 375, 290);
     
     
 }
 // Настройка PickerVIew
+//количество столбцов в выплывающем списке
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)gendrePicker {
     return 1;
     
 }
-
+//количество рядов в выплывающем списке
 -(NSInteger)pickerView:(UIPickerView *)gendrePicker numberOfRowsInComponent:(NSInteger)component {
     return [genderArr count];
     
 }
-
+//назначение надписи в ряде в выплывающем списке
 -(NSString *)pickerView:(UIPickerView *)gendrePicker titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     return [genderArr objectAtIndex:row];
 }
+//если выбран какой -то ряд, то записывать значение ряда в соответствующий label
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     self.genderField.textColor = [UIColor blackColor];
     self.genderField.text = [genderArr objectAtIndex:[pickerView selectedRowInComponent:0]];
 }
 
-// Анимация выбора пола и даты рождения
-
+// Анимация всплывания  и скрытия списка с датами рождения
+//всплывание
 - (IBAction)birthDateBtn:(id)sender {
     [self.dateViewContainer setHidden:NO];
     [UIView beginAnimations:nil context:NULL];
@@ -71,6 +78,7 @@
     [UIView commitAnimations];
     
 }
+//скрытие
 - (IBAction)kkBirth:(id)sender {
     [self.dateViewContainer setHidden:YES];
     [UIView beginAnimations:nil context:NULL];
@@ -79,9 +87,9 @@
     [UIView commitAnimations];
 }
 
+//Анимация всплывания и скрытия спсиска с полом
 
-
-
+//всплывание
 - (IBAction)genderBtn:(id)sender {
     [self.pickerViewContainer setHidden: NO];
     [UIView beginAnimations:nil context:NULL];
@@ -92,7 +100,7 @@
     [UIView commitAnimations];
 }
 
-
+//скрытие
 - (IBAction)kkGender:(id)sender {
     [self.pickerViewContainer setHidden: YES];
     [UIView beginAnimations:nil context:NULL];
@@ -101,6 +109,7 @@
     [UIView commitAnimations];
 }
 
+//установка формата получения даты с DataPicker
 - (IBAction)getBirthDate:(id)sender {
     NSDate *selected = [birthPicker date];
     NSDateFormatter *format = [[NSDateFormatter alloc]init];
@@ -126,7 +135,7 @@
     return [textField resignFirstResponder];
 }
 
-// запись в базу
+// запись в базу данных перед переходом на другую форму
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"ToSport"]){
        
@@ -138,6 +147,7 @@
         [self.creatingUser setValue:self.genderField.text forKey:@"gender"];
         [self.creatingUser setValue:0 forKey:@"winrate"];
         [self.creatingUser setValue:self.additionalInfo.text forKey:@"additional"];
+        [self.creatingUser setValue:@"default_photo.jpg" forKey:@"imagePath"];
         [appdelegate saveContext];
         SportViewController *sc = (SportViewController *)segue.destinationViewController;
         sc.userInf = self.creatingUser;

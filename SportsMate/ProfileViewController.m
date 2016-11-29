@@ -39,9 +39,14 @@
             sport= [self.currentUser valueForKey:@"sport"];
             birth= [self.currentUser valueForKey:@"birth"];
     path = [self.currentUser valueForKey:@"imagePath"];
+    if ([path isEqualToString:@"default_photo.jpg"]){
+        self.profileImage.image = [UIImage imageNamed:@"default_photo.jpg"];
+    }
+    else{
+    self.profileImage.image = [UIImage imageWithContentsOfFile:path];}
     NSLog(@"%@", [NSString stringWithFormat:@"%@",path]);
     self.additionalInfo.text = [self.currentUser valueForKey:@"additional"];
-    self.profileImage.image = [UIImage imageWithContentsOfFile:path];
+    
     self.nameField.text = name;
     self.phoneField.text = phone;
     self.cityField.text = city;
@@ -116,7 +121,7 @@
 
 }
 
-//настройка  pickerView
+//Настройка параметров всплывающего списка
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)gendrePicker {
     return 1;
     
@@ -137,7 +142,7 @@
 }
 
 
-//profile pic
+//получение фотографии пользователя из библиотеки или с помощью камеры телефона
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     //путь к файлу в каталоге
@@ -197,7 +202,7 @@
 
 }
 
-
+// анимация всплывания списка
 - (IBAction)kkBtn:(id)sender {
     [self.pickerViewContainer setHidden: YES];
     [UIView beginAnimations:nil context:NULL];
@@ -224,7 +229,7 @@
     self.places.currentUser = self.currentUser;
 
 }
-
+//  logout
 - (IBAction)exitBtnPressed:(id)sender {
     
     NSMutableArray *navArr = [[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];

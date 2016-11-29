@@ -16,7 +16,13 @@
 }
 
 -(void)fillCell:(NSManagedObject *)obj{
-    self.imageView.image = [UIImage imageWithContentsOfFile:[obj valueForKey:@"imagePath"]];
+   NSString *path = [obj valueForKey:@"imagePath"];
+    if ([path isEqualToString:@"default_photo.jpg"]){
+        self.imageView.image = [UIImage imageNamed:@"default_photo.jpg"];
+    }
+    else{
+        self.imageView.image = [UIImage imageWithContentsOfFile:path];}
+   
     self.nameField.text = [obj valueForKey:@"name"];
     self.cityField.text = [obj valueForKey:@"city"];
     self.sportField.text = [obj valueForKey:@"sport"];

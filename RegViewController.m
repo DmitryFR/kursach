@@ -49,7 +49,7 @@
 }
 
 
-
+// корректное скрывание клавиатуры
 -(void) hideKeyboardWhenBackgroungIsTapped{
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
     [tgr setCancelsTouchesInView:NO];
@@ -64,7 +64,7 @@
 }
 
 
-
+// проверка на праивльость ввода пользователем информации
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     if([identifier isEqualToString:@"ToDopInfo"]){
         if (([self.email.text isEqualToString: @""])&&([self.pass1.text isEqualToString:@""])&&([self.pass2.text isEqualToString:@""])){
@@ -76,7 +76,7 @@
             
         }
         else if ([self.pass1.text  compare:self.pass2.text ]){
-            UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:nil message:@"Пароль должны совпадать!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:nil message:@"Пароли должны совпадать!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [self hideKeyboard];
             [alert1 show];
             return NO;
@@ -115,6 +115,8 @@
     }
     return NO;
 }
+
+// передача введенной информации в следующую форму
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ToDopInfo"]){
         DopInfoViewController *vc = (DopInfoViewController *)segue.destinationViewController;

@@ -19,6 +19,7 @@
 		AA1BB1751DB4D077008E1DDA /* SportsMate1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA1BB1731DB4D077008E1DDA /* SportsMate1.xcdatamodeld */; };
 		AA1BB1771DB52644008E1DDA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1BB1761DB52644008E1DDA /* MapKit.framework */; };
 		AA7D345F1DB8EC5B00D7E1D5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7D345E1DB8EC5B00D7E1D5 /* Launch Screen.storyboard */; };
+		AA7D34671DBD24AF00D7E1D5 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D34661DBD24AF00D7E1D5 /* MapPin.m */; };
 		AA9FE6761DB2267800CEE1CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9FE6751DB2267800CEE1CC /* CoreData.framework */; };
 		AAA33D411DAAB45400A9D27E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA33D401DAAB45400A9D27E /* main.m */; };
 		AAA33D441DAAB45400A9D27E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA33D431DAAB45400A9D27E /* AppDelegate.m */; };
@@ -34,6 +35,7 @@
 		AAA33D8A1DB159E300A9D27E /* Player Shirt Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA33D891DB159E300A9D27E /* Player Shirt Filled-25.png */; };
 		AAA33D8C1DB159E600A9D27E /* Basketball Field Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA33D8B1DB159E600A9D27E /* Basketball Field Filled-25.png */; };
 		AAA33D931DB15BB400A9D27E /* Копия sport3.png in Resources */ = {isa = PBXBuildFile; fileRef = AAA33D921DB15BB400A9D27E /* Копия sport3.png */; };
+		AAE56F261DBDEA7600303376 /* default_photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAE56F251DBDEA7600303376 /* default_photo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		AA1BB1741DB4D077008E1DDA /* SportsMate1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsMate1.xcdatamodel; sourceTree = "<group>"; };
 		AA1BB1761DB52644008E1DDA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AA7D345E1DB8EC5B00D7E1D5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		AA7D34651DBD24AF00D7E1D5 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		AA7D34661DBD24AF00D7E1D5 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 		AA9FE6751DB2267800CEE1CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AAA33D3C1DAAB45400A9D27E /* SportsMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA33D401DAAB45400A9D27E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		AAA33D891DB159E300A9D27E /* Player Shirt Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player Shirt Filled-25.png"; sourceTree = "<group>"; };
 		AAA33D8B1DB159E600A9D27E /* Basketball Field Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Basketball Field Filled-25.png"; sourceTree = "<group>"; };
 		AAA33D921DB15BB400A9D27E /* Копия sport3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Копия sport3.png"; sourceTree = "<group>"; };
+		AAE56F251DBDEA7600303376 /* default_photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_photo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,15 +177,17 @@
 				AA1BB16B1DB4B2E8008E1DDA /* UsersTableViewController.m */,
 				AA1BB16D1DB4B300008E1DDA /* ExistingUserViewController.h */,
 				AA1BB16E1DB4B300008E1DDA /* ExistingUserViewController.m */,
+				AA1BB1731DB4D077008E1DDA /* SportsMate1.xcdatamodeld */,
 				AA1BB15B1DB3B13C008E1DDA /* NewPlaceViewController.h */,
 				AA1BB15C1DB3B13C008E1DDA /* NewPlaceViewController.m */,
+				AA7D34651DBD24AF00D7E1D5 /* MapPin.h */,
+				AA7D34661DBD24AF00D7E1D5 /* MapPin.m */,
 				AA1BB15E1DB3B14A008E1DDA /* ExistingPlaceViewController.h */,
 				AA1BB15F1DB3B14A008E1DDA /* ExistingPlaceViewController.m */,
 				AA1BB1581DB3B116008E1DDA /* PlacesTableViewController.h */,
 				AA1BB1591DB3B116008E1DDA /* PlacesTableViewController.m */,
 				AA1BB1431DB28843008E1DDA /* ProfileViewController.h */,
 				AA1BB1441DB28843008E1DDA /* ProfileViewController.m */,
-				AA1BB1731DB4D077008E1DDA /* SportsMate1.xcdatamodeld */,
 				AA1BB1701DB4B5D8008E1DDA /* UserTableViewCell.h */,
 				AA1BB1711DB4B5D8008E1DDA /* UserTableViewCell.m */,
 				AA1BB14C1DB2AC1D008E1DDA /* enterViewController.h */,
@@ -233,6 +240,7 @@
 				AA1BB14A1DB29E6E008E1DDA /* PopoverViewController.m */,
 				AAA33D921DB15BB400A9D27E /* Копия sport3.png */,
 				AAA33D871DB1593B00A9D27E /* Reviewer Male Filled-25.png */,
+				AAE56F251DBDEA7600303376 /* default_photo.jpg */,
 				AAA33D891DB159E300A9D27E /* Player Shirt Filled-25.png */,
 				AAA33D8B1DB159E600A9D27E /* Basketball Field Filled-25.png */,
 			);
@@ -352,6 +360,7 @@
 				AAA33D931DB15BB400A9D27E /* Копия sport3.png in Resources */,
 				AAA33D4F1DAAB45400A9D27E /* Assets.xcassets in Resources */,
 				AAA33D4A1DAAB45400A9D27E /* Main.storyboard in Resources */,
+				AAE56F261DBDEA7600303376 /* default_photo.jpg in Resources */,
 				AA7D345F1DB8EC5B00D7E1D5 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +389,7 @@
 				AA1BB16F1DB4B300008E1DDA /* ExistingUserViewController.m in Sources */,
 				AAA33D441DAAB45400A9D27E /* AppDelegate.m in Sources */,
 				AA1BB16C1DB4B2E8008E1DDA /* UsersTableViewController.m in Sources */,
+				AA7D34671DBD24AF00D7E1D5 /* MapPin.m in Sources */,
 				AA1BB1751DB4D077008E1DDA /* SportsMate1.xcdatamodeld in Sources */,
 				AA1BB14E1DB2AC1D008E1DDA /* enterViewController.m in Sources */,
 				AAA33D7D1DABFCF200A9D27E /* DopInfoViewController.m in Sources */,

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="additional" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="adress" attributeType="String" syncable="YES"/>
+        <attribute name="city" attributeType="String" syncable="YES"/>
+        <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sport" attributeType="String" syncable="YES"/>
+        <attribute name="subway" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="creatorName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="eventInfo" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="User" syncable="YES">
         <attribute name="birth" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,9 +22,10 @@
         <attribute name="password" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sport" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="winrate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="eventInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="creatorName" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="User" positionX="-254" positionY="-45" width="128" height="195"/>
+        <element name="Event" positionX="-63" positionY="54" width="128" height="195"/>
     </elements>
 </model>

@@ -86,7 +86,7 @@
     _context = _appdelegate.persistentContainer.viewContext;
 }
 
-// Настройка pickerView
+// Настройка вида всплывающего списка и заполнение его информацией
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)gendrePicker {
     return 1;
     
@@ -106,7 +106,7 @@
     self.sportField.text = [self.sportArr objectAtIndex:[pickerView selectedRowInComponent:0]];
 }
 
-//Запись в базу
+//сохранение в базу введенной информации
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     if ([identifier isEqualToString:@"ToMain"]){
@@ -127,6 +127,7 @@
     return NO;
 }
 
+// передача введенной информации в следующую форму
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     self.tbController = (UITabBarController *)[segue destinationViewController];
     self.profile = [self.tbController.viewControllers objectAtIndex:0];

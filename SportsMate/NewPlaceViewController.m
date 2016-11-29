@@ -8,10 +8,12 @@
 
 #import "NewPlaceViewController.h"
 
-@interface NewPlaceViewController (){
-    NSManagedObjectContext *context;
-    AppDelegate *appdelegate;
+@interface NewPlaceViewController () {
+    
+    NSString *imagePath;
 }
+    @property AppDelegate *appdelegate;
+    @property NSManagedObjectContext *context;
 
 @end
 
@@ -87,9 +89,10 @@
     self.subwayField.delegate = self;
     self.adressField.delegate = self;
     [self hideKeyboardWhenBackgroungIsTapped];
-    appdelegate = [[UIApplication sharedApplication]delegate];
-    context = appdelegate.persistentContainer.viewContext;
+    _appdelegate = [[UIApplication sharedApplication]delegate];
+    _context = _appdelegate.persistentContainer.viewContext;
 }
+//настройка Размера и содержимого всплывающего списка
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)gendrePicker {
     return 1;
     
@@ -109,7 +112,7 @@
     self.sportField.text = [self.sportArr objectAtIndex:[pickerView selectedRowInComponent:0]];
 }
 
-
+// Скрытие клавиатуры
 -(void) hideKeyboardWhenBackgroungIsTapped{
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard)];
     [tgr setCancelsTouchesInView:NO];
@@ -123,7 +126,7 @@
     return [textField resignFirstResponder];
 }
 
-
+//Анимация выпадающего списка
 - (IBAction)selectSportBtnPressed:(id)sender {
     [self.pickerViewContainer setHidden: NO];
     [UIView beginAnimations:nil context:NULL];
@@ -140,6 +143,27 @@
     [UIView commitAnimations];
 }
 
+//Получение фотографии из библиотеки или с помошщью камреры
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    //путь к файлу в каталоге
+    // NSDocument dirctory  погуглить и может быть заменить на другое
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+    NSString *uniqueFilename = [[NSUUID UUID]UUIDString];
+    imagePath = [documentsDirectory stringByAppendingPathComponent:uniqueFilename];
+    
+    //получить изображение
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
+   // [self.event setValue:imagePath forKey:@"imagePath"];
+    NSLog(@"%@", [NSString stringWithFormat:@"%@",imagePath]);
+    //[_appdelegate saveContext];
+    self.imageView.image = image;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)addPhotoBtnPressed:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         UIActionSheet *photoSourceSheet = [[UIActionSheet alloc]initWithTitle:@"Выберите фотографию" delegate:self cancelButtonTitle:@"Отмена" destructiveButtonTitle:nil otherButtonTitles:@"Сделать новое фото",@"Выбрать из библиотеки", nil];
@@ -159,25 +183,7 @@
     }
     
 }
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    //путь к файлу в каталоге
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSString *uniqueFilename = [[NSUUID UUID]UUIDString];
-    NSString *imagePath = [documentsDirectory stringByAppendingPathComponent:uniqueFilename];
-    
-    //получить изображение
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-    [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
-    [self.event setValue:imagePath forKey:@"imagePath"];
-    NSLog(@"%@", [NSString stringWithFormat:@"%@",imagePath]);
-    //[appdelegate saveContext];
-    self.imageView.image = image;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
 -(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if (buttonIndex == actionSheet.cancelButtonIndex){
         return;
@@ -197,16 +203,16 @@
     
 }
 
-
 - (IBAction)addBtnPressed:(id)sender {
-     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
-    self.event = [[NSManagedObject alloc]initWithEntity:entityDesc insertIntoManagedObjectContext:context];
+     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:_context];
+    self.event = [[NSManagedObject alloc]initWithEntity:entityDesc insertIntoManagedObjectContext:_context];
     [self.event setValue:self.cityField.text forKey:@"city"];
     [self.event setValue:self.subwayField.text forKey:@"subway"];
     [self.event setValue:self.adressField.text forKey:@"adress"];
     [self.event setValue:self.sportField.text forKey:@"sport"];
     [self.event setValue:self.additionalInfo.text forKey:@"additional"];
-    [appdelegate saveContext];
+    [self.event setValue:imagePath forKey:@"imagePath"];
+    [_appdelegate saveContext];
 //    UIAlertView *alert1 = [[UIAlertView alloc]initWithTitle:nil message:@"Событие успешно добалено!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [self hideKeyboard];
     //[alert1 show];

@@ -39,7 +39,7 @@
 }
 
 #pragma mark - Table view data source
-
+//Создание таблицы с одной секцией и количеством строк, равным количеству элементов в массиве userArr
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
@@ -61,7 +61,7 @@
     return cell;
 }
 
-
+//передача даннах в следующую форму
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"MoreInfo"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

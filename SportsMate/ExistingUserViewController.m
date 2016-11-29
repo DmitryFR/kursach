@@ -23,7 +23,12 @@
     self.birthField.text = [self.currentUser valueForKey:@"birth"];
     self.sportfield.text = [self.currentUser valueForKey:@"sport"];
     self.additionalInfo.text = [self.currentUser valueForKey:@"additional"];
-    self.imageView.image = [UIImage imageWithContentsOfFile:[self.currentUser valueForKey:@"imagePath"]];
+   NSString *path = [self.currentUser valueForKey:@"imagePath"];
+    if ([path isEqualToString:@"default_photo.jpg"]){
+        self.imageView.image = [UIImage imageNamed:@"default_photo.jpg"];
+    }
+    else{
+        self.imageView.image = [UIImage imageWithContentsOfFile:path];}
    
 }
 

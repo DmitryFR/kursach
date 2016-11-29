@@ -24,9 +24,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-//-(void)puchViews{
-//    [self.navigationController popToRootViewControllerAnimated:NO];
-//    
-//}
 
 @end

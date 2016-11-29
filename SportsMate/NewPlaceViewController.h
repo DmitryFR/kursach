@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
+
 @interface NewPlaceViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UIActionSheetDelegate,UITabBarControllerDelegate>{
     IBOutlet UIPickerView *sportPicker;
 }
@@ -16,17 +17,18 @@
 @property (weak, nonatomic) IBOutlet UITextField *subwayField;
 @property (weak, nonatomic) IBOutlet UITextField *adressField;
 @property (weak, nonatomic) IBOutlet UITextField *sportField;
+@property (weak, nonatomic) IBOutlet UITextView *additionalInfo;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *pickerViewContainer;
+
 @property (retain, nonatomic)NSManagedObject *event;
 @property (strong,nonatomic)NSMutableArray *sportArr;
-@property (weak, nonatomic) IBOutlet UITextView *additionalInfo;
 
 - (IBAction)selectSportBtnPressed:(id)sender;
 - (IBAction)kkBtnPressed:(id)sender;
 - (IBAction)addPhotoBtnPressed:(id)sender;
 
 - (IBAction)addBtnPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-@property (weak, nonatomic) IBOutlet UIView *pickerViewContainer;
 
 @end

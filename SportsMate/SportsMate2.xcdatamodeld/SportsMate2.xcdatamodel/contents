@@ -6,8 +6,8 @@
         <attribute name="city" attributeType="String" syncable="YES"/>
         <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="sport" attributeType="String" syncable="YES"/>
         <attribute name="subway" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -25,7 +25,7 @@
         <attribute name="winrate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="160" positionY="63" width="128" height="180"/>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="208"/>
+        <element name="Event" positionX="0" positionY="45" width="128" height="180"/>
+        <element name="User" positionX="-36" positionY="9" width="128" height="210"/>
     </elements>
 </model>
